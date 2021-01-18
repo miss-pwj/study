@@ -15,7 +15,8 @@ import java.util.function.Supplier;
  */
 public class LamdalExpression {
 
-    /*消费型*/
+    /**
+     * 消费型*/
     @Test
     public void test01(){
         //Consumer
@@ -24,22 +25,23 @@ public class LamdalExpression {
         consumer.accept(100);
     }
 
-    /*提供型*/
+    /**提供型*/
     @Test
     public void test02(){
         List<Integer> list = new ArrayList<>();
         List<Integer> integers = Arrays.asList(1,2,3);
         list.addAll(integers);
         //Supplier<T>
-        Supplier<Integer> supplier = () -> (int)(Math.random() * 10);
+        Supplier<Integer> supplier = () -> {return (int)(Math.random() * 10);};
         list.add(supplier.get());
         System.out.println(supplier);
         for (Integer integer : list) {
             System.out.println(integer);
+
         }
     }
 
-    /*函数型*/
+    /**函数型*/
     @Test
     public void test03(){
         //Function<T, R>
@@ -50,7 +52,8 @@ public class LamdalExpression {
     }
 
 
-    /*断言型*/
+    /**
+     * 断言型*/
     @Test
     public void test04(){
         //Predicate<T>

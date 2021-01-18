@@ -33,6 +33,9 @@ public class _6CallableDemo {
     FutureTask<Integer> futureTask = new FutureTask<>(new MyThread());
         new Thread(futureTask, "A").start();
         new Thread(futureTask, "B").start();//只调用一次，有缓存
+
+
+
         //new Thread(Runnable,name)
 
         System.out.println(Thread.currentThread().getName()+"计算完成");
